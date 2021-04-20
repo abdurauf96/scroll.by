@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Microsoft Tai Le';
+    src: url('MicrosoftTaiLe-Bold.woff2') format('woff2'),
+        url('MicrosoftTaiLe-Bold.woff') format('woff'),
+        url('MicrosoftTaiLe-Bold.svg#MicrosoftTaiLe-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
