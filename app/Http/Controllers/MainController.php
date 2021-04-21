@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Slayder;
 use \App\Models\Service;
+use \App\Models\BlokAbout;
 
 class MainController extends Controller
 {
@@ -13,7 +14,8 @@ class MainController extends Controller
        
         $slayders=Slayder::all();
         $services=Service::all();
-        return view('welcome', compact('slayders', 'services'));
+        $about=BlokAbout::first();
+        return view('welcome', compact('slayders', 'services', 'about'));
     }
 
     public function contact()
