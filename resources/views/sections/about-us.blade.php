@@ -18,7 +18,7 @@
           <div class="col-md-12">
                       <div class="slider_meet navs">
                           <div class="slider_meet_item">
-                 <div class="background_meet" style="background-image:url(assets/images/kto-my-takie.svg)"></div>
+                 <div class="background_meet" style="background-image:url(/assets/images/kto-my-takie.svg)"></div>
                  <div class="content_list">
                    <h2 class="h2"><a href="" class="link" tabindex="0">Кто мы такие</a></h2>                                        <p>Scroll Media Solutions – это прежде всего команда преданных своему делу профессионалов, которые готовы работать исключительно на результат и помочь своим клиентам в достижении поставленных целей. 
   

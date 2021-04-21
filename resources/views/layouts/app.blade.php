@@ -24,7 +24,7 @@
       gtag('js', new Date());
       gtag('config', 'UA-150883313-1');
     </script>
-
+    @livewireStyles
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -49,7 +49,7 @@
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://cdn-ru.bitrix24.by/b3535105/crm/site_button/loader_2_o3kiqp.js');
 </script>
-<body>
+<body style="height: 100%">
 
     <!--div class="curtain-transparent"></div>
     <div class="curtain"></div>
@@ -562,7 +562,7 @@
             </div>
         </div>
     </div>
-        
+    @livewireScripts
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -614,5 +614,17 @@
              };
            });
        });
+
+        // $(document).ready(function () {
+            
+
+        //     var url = window.location.href;
+        //     var res = url.split("/");
+        //     var pos = res.indexOf('category');
+        //     if(pos==3){
+        //         document.getElementById( 'our_works' ).scrollIntoView();
+        //     }
+            
+        // });
    </script>
      

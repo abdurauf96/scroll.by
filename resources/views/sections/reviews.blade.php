@@ -11,7 +11,7 @@
                 <a class="learn-more" href="/reviews">
                   <div class="circle-red">
                     <span class="icon">
-                     <img src="img/icon/reviews-icon.png" alt="">
+                     <img src="/img/icon/reviews-icon.png" alt="">
                    </span>
                  </div>
                  <p class="button-text">Все отзывы</p>
@@ -30,7 +30,7 @@
           <div class="reviews_item">
                                 <div class="row">
                                   <div class="col-lg-12 col-xl-3">
-                                      <div class="photo_rev" style="background-image:url(assets/images/flavia_logo.png)"></div>
+                                      <div class="photo_rev" style="background-image:url(/assets/images/flavia_logo.png)"></div>
                                       <div class="made_rev">
                                         <img data-src="/" class="img-fluid" alt="">
                                       </div>
@@ -49,7 +49,7 @@
                                               </div>
                                             </div>                  <div class="col-sm-12 col-md-3">
                                                 <div class="downloan_file rounded-circle" >
-                                                  <a href="assets/images/3_001-min.jpg" target="_blank" class="link">
+                                                  <a href="/assets/images/3_001-min.jpg" target="_blank" class="link">
                                                       <i class="fal fa-file-pdf"></i>
                                                   </a>
                                                 </div>
@@ -59,7 +59,7 @@
                             </div><div class="reviews_item">
                                 <div class="row">
                                   <div class="col-lg-12 col-xl-3">
-                                      <div class="photo_rev" style="background-image:url(assets/images/logo-krona.png)"></div>
+                                      <div class="photo_rev" style="background-image:url(/assets/images/logo-krona.png)"></div>
                                       <div class="made_rev">
                                         <img data-src="/" class="img-fluid" alt="">
                                       </div>
@@ -81,7 +81,7 @@
                                               </div>
                                             </div>                  <div class="col-sm-12 col-md-3">
                                                 <div class="downloan_file rounded-circle" >
-                                                  <a href="assets/images/4_001-min.jpg" target="_blank" class="link">
+                                                  <a href="/assets/images/4_001-min.jpg" target="_blank" class="link">
                                                       <i class="fal fa-file-pdf"></i>
                                                   </a>
                                                 </div>
@@ -91,7 +91,7 @@
                             </div><div class="reviews_item">
                                 <div class="row">
                                   <div class="col-lg-12 col-xl-3">
-                                      <div class="photo_rev" style="background-image:url(assets/images/header_logo123.png)"></div>
+                                      <div class="photo_rev" style="background-image:url(/assets/images/header_logo123.png)"></div>
                                       <div class="made_rev">
                                         <img data-src="/" class="img-fluid" alt="">
                                       </div>
@@ -114,7 +114,7 @@
                                               </div>
                                             </div>                  <div class="col-sm-12 col-md-3">
                                                 <div class="downloan_file rounded-circle" >
-                                                  <a href="assets/images/2_001-min.jpg" target="_blank" class="link">
+                                                  <a href="/assets/images/2_001-min.jpg" target="_blank" class="link">
                                                       <i class="fal fa-file-pdf"></i>
                                                   </a>
                                                 </div>
@@ -124,7 +124,7 @@
                             </div><div class="reviews_item">
                                 <div class="row">
                                   <div class="col-lg-12 col-xl-3">
-                                      <div class="photo_rev" style="background-image:url(assets/images/fornelli-logo.png)"></div>
+                                      <div class="photo_rev" style="background-image:url(/assets/images/fornelli-logo.png)"></div>
                                       <div class="made_rev">
                                         <img data-src="/" class="img-fluid" alt="">
                                       </div>
@@ -146,7 +146,7 @@
                                               </div>
                                             </div>                  <div class="col-sm-12 col-md-3">
                                                 <div class="downloan_file rounded-circle" >
-                                                  <a href="assets/images/1_001-min.jpg" target="_blank" class="link">
+                                                  <a href="/assets/images/1_001-min.jpg" target="_blank" class="link">
                                                       <i class="fal fa-file-pdf"></i>
                                                   </a>
                                                 </div>
@@ -156,7 +156,7 @@
                             </div><div class="reviews_item">
                                 <div class="row">
                                   <div class="col-lg-12 col-xl-3">
-                                      <div class="photo_rev" style="background-image:url(assets/images/partners.png)"></div>
+                                      <div class="photo_rev" style="background-image:url(/assets/images/partners.png)"></div>
                                       <div class="made_rev">
                                         <img data-src="/" class="img-fluid" alt="">
                                       </div>
@@ -179,7 +179,7 @@
                                               </div>
                                             </div>                  <div class="col-sm-12 col-md-3">
                                                 <div class="downloan_file rounded-circle" >
-                                                  <a href="assets/images/5_001-min.jpg" target="_blank" class="link">
+                                                  <a href="/assets/images/5_001-min.jpg" target="_blank" class="link">
                                                       <i class="fal fa-file-pdf"></i>
                                                   </a>
                                                 </div>
@@ -189,7 +189,7 @@
                             </div><div class="reviews_item">
                                 <div class="row">
                                   <div class="col-lg-12 col-xl-3">
-                                      <div class="photo_rev" style="background-image:url(assets/images/logo_zavod.png)"></div>
+                                      <div class="photo_rev" style="background-image:url(/assets/images/logo_zavod.png)"></div>
                                       <div class="made_rev">
                                         <img data-src="/" class="img-fluid" alt="">
                                       </div>
@@ -208,7 +208,7 @@
                                               </div>
                                             </div>                  <div class="col-sm-12 col-md-3">
                                                 <div class="downloan_file rounded-circle" >
-                                                  <a href="assets/images/svetliachok-bagodarnost.jpg" target="_blank" class="link">
+                                                  <a href="/assets/images/svetliachok-bagodarnost.jpg" target="_blank" class="link">
                                                       <i class="fal fa-file-pdf"></i>
                                                   </a>
                                                 </div>

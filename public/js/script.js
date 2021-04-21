@@ -1,3 +1,6 @@
+
+
+
 $(function(){
     $('body').on('click', '.btn_our_work', function (e) {
         var mass = {};
@@ -34,82 +37,82 @@ $(function(){
 
     });
 
-    $('body').on('click', '.portfolio_items', function (e) {
-        var mass = {};
+    // $('body').on('click', '.portfolio_items', function (e) {
+    //     var mass = {};
 
-        mass['count_add'] = $(this).data('items_count');
+    //     mass['count_add'] = $(this).data('items_count');
 
-        var search = decodeURI(window.location.search).slice(1);
-        var items_pred = search.split('=');
+    //     var search = decodeURI(window.location.search).slice(1);
+    //     var items_pred = search.split('=');
 
-        mass['filter'] = items_pred[1];
+    //     mass['filter'] = items_pred[1];
      
 
-	// $('.portfolio-item').last().toggleClass("active");
-        $.ajax({
-            type: "GET",
-            url: "/app/portfolio_items",
-            data: mass,
-            dataType: 'html',
-            success: function(response) {
-                $('.portfolio_items').remove();
-                $('#portfolio').append(response);
-				update_img();
-			}
-        });
+	// // $('.portfolio-item').last().toggleClass("active");
+    //     $.ajax({
+    //         type: "GET",
+    //         url: "/app/portfolio_items",
+    //         data: mass,
+    //         dataType: 'html',
+    //         success: function(response) {
+    //             $('.portfolio_items').remove();
+    //             $('#portfolio').append(response);
+	// 			update_img();
+	// 		}
+    //     });
 
-    });
+    // });
 
     $('.block_nav').on('click', 'a', function (e) {
         e.preventDefault();
-        var url = decodeURI(window.location.search),
-            other = $(this).data('other'),
-            page = $(this).data('page'),
-            mass = {};
+        // var url = decodeURI(window.location.search),
+        //     other = $(this).data('other'),
+        //     page = $(this).data('page'),
+        //     mass = {};
 
-        $(this).parent().toggleClass('active');
+        // $(this).parent().toggleClass('active');
 
-        mass['filter'] = searhes($(this).data('name'), 'filter');
-        console.log(mass['filter']);
+        // mass['filter'] = searhes($(this).data('name'), 'filter');
+        // console.log(mass['filter']);
 
-        if ($(this).data('name')=='all'){
-            var li_mass = $(this).parent().parent().find('li[class="active"]');
-            for (var i=0;i<li_mass.length;i++){
-                li_mass[i].className = '';
-            }
-            $(this).parent().addClass('active');
-        }else{
-            $(this).parent().parent().find('a[data-name="all"]').parent().removeClass('active');
-        }
+        // if ($(this).data('name')=='all'){
+        //     var li_mass = $(this).parent().parent().find('li[class="active"]');
+        //     for (var i=0;i<li_mass.length;i++){
+        //         li_mass[i].className = '';
+        //     }
+        //     $(this).parent().addClass('active');
+        // }else{
+        //     $(this).parent().parent().find('a[data-name="all"]').parent().removeClass('active');
+        // }
 
-        mass['js'] = 'yes';
-        mass['other'] = other;
+        // mass['js'] = 'yes';
+        // mass['other'] = other;
 
-        if (page=='portfolio') {
-            $.ajax({
-                type: "GET",
-                url: "/app/portfolio_items",
-                data: mass,
-                dataType: 'html',
-                success: function (response) {
-                    $('#portfolio').html(response);
-					update_img();
-                }
-            });
-        }
+        // if (page=='portfolio') {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/app/portfolio_items",
+        //         data: mass,
+        //         dataType: 'html',
+        //         success: function (response) {
+        //             $('#portfolio').html(response);
+		// 			update_img();
+        //         }
+        //     });
+        // }
 
-        if (page=='blog') {
-            $.ajax({
-                type: "GET",
-                url: "/app/blog_items",
-                data: mass,
-                dataType: 'html',
-                success: function (response) {
-                    $('#news_items').html(response);
-                }
-            });
-        }
-        return false;
+        // if (page=='blog') {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/app/blog_items",
+        //         data: mass,
+        //         dataType: 'html',
+        //         success: function (response) {
+        //             $('#news_items').html(response);
+        //         }
+        //     });
+        // }
+        // return false;
     });
 });
 

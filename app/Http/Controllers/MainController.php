@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Slayder;
+use \App\Models\Service;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index($category=null, $slug=null)
     {
-        $slayders=\App\Models\Slayder::all();
-        $services=\App\Models\Service::all();
+       
+        $slayders=Slayder::all();
+        $services=Service::all();
         return view('welcome', compact('slayders', 'services'));
     }
 
@@ -50,6 +53,7 @@ class MainController extends Controller
 
     public function services()
     {
-        return view('services');
+        $services=Service::all();
+        return view('services', compact('services'));
     }
 }

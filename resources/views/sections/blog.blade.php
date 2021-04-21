@@ -11,7 +11,7 @@
                 <a class="learn-more" href="/blog">
                   <div class="circle-red">
                     <span class="icon">
-                     <img src="img/icon/blog-icon.png" alt="">
+                     <img src="/img/icon/blog-icon.png" alt="">
                    </span>
                  </div>
                  <p class="button-text">Все статьи Блога</p>
@@ -29,7 +29,7 @@
           <div class="slider_news navs">
                          <div class="slider_news_item">
                 <a href="/new_blog/novogodnyaya-akciya-na-uslugi-razrabotka-i-prodvizhenie-sajtov">
-                 <div class="block_photo" style="background-image: url(assets/images/new-year.jpg)">
+                 <div class="block_photo" style="background-image: url(/assets/images/new-year.jpg)">
                   <div class="overlay" style="top: 307px; left: 693.5px;"></div>
                   <div class="block_tags">
                    <span>24.12.20</span>
@@ -44,7 +44,7 @@
            </div>
                         <div class="slider_news_item">
                 <a href="/new_blog/35tehnicheskaya-podderzhka-i-razvitie-brenda">
-                 <div class="block_photo" style="background-image: url(assets/images/technical-support.jpg)">
+                 <div class="block_photo" style="background-image: url(/assets/images/technical-support.jpg)">
                   <div class="overlay" style="top: 307px; left: 693.5px;"></div>
                   <div class="block_tags">
                    <span>17.12.20</span>
@@ -59,7 +59,7 @@
            </div>
                         <div class="slider_news_item">
                 <a href="/new_blog/34ot-chego-zavisyat-sroki-seo-prodvizheniya">
-                 <div class="block_photo" style="background-image: url(assets/images/seo-optimization.jpg)">
+                 <div class="block_photo" style="background-image: url(/assets/images/seo-optimization.jpg)">
                   <div class="overlay" style="top: 307px; left: 693.5px;"></div>
                   <div class="block_tags">
                    <span>14.12.20</span>
@@ -74,7 +74,7 @@
            </div>
                         <div class="slider_news_item">
                 <a href="/new_blog/vidy-kontekstnoj-reklamy">
-                 <div class="block_photo" style="background-image: url(assets/images/context-adv.png)">
+                 <div class="block_photo" style="background-image: url(/assets/images/context-adv.png)">
                   <div class="overlay" style="top: 307px; left: 693.5px;"></div>
                   <div class="block_tags">
                    <span>10.12.20</span>
@@ -89,7 +89,7 @@
            </div>
                         <div class="slider_news_item">
                 <a href="/new_blog/dlya-chego-i-komu-nuzhna-tehnicheskaya-podderzhka">
-                 <div class="block_photo" style="background-image: url(assets/images/techical-support.jpg)">
+                 <div class="block_photo" style="background-image: url(/assets/images/techical-support.jpg)">
                   <div class="overlay" style="top: 307px; left: 693.5px;"></div>
                   <div class="block_tags">
                    <span>09.12.20</span>
@@ -104,7 +104,7 @@
            </div>
                         <div class="slider_news_item">
                 <a href="/new_blog/pro-cms-1s-bitriks-upravlenie-sajtom">
-                 <div class="block_photo" style="background-image: url(assets/images/bitrix.jpg)">
+                 <div class="block_photo" style="background-image: url(/assets/images/bitrix.jpg)">
                   <div class="overlay" style="top: 307px; left: 693.5px;"></div>
                   <div class="block_tags">
                    <span>04.12.20</span>

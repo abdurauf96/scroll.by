@@ -16,17 +16,17 @@
 	<div class="stack-technology">
 		<div class="container">
 			<div class="stack-technology-wrap">
-				<div class="stack-technology-item"> <img src="img/stack-technology/google-logo.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/yandex_logo_ru.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/1c-bitrix-logo.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/modx-black-solid.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/laravel-logo.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/node-logo.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/react-logo.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/Java-Logo.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/html5-1.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/html5-2.png" alt=""> </div>
-				<div class="stack-technology-item"> <img src="img/stack-technology/css-1.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/google-logo.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/yandex_logo_ru.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/1c-bitrix-logo.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/modx-black-solid.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/laravel-logo.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/node-logo.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/react-logo.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/Java-Logo.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/html5-1.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/html5-2.png" alt=""> </div>
+				<div class="stack-technology-item"> <img src="/img/stack-technology/css-1.png" alt=""> </div>
 			</div>
 		</div>
 	</div>
