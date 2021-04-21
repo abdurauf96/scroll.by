@@ -2,12 +2,13 @@
     <div class="header_top_menu_bg"></div>
     <div class="header_top_menu_bg_transparent"></div>
       <div class="header_top_menu {{ Route::currentRouteName()!='main' ? 'inner' : '' }}">
-          <div class="logo">
+          <div class="{{ Route::currentRouteName()!='main' ? 'logo_inner' : 'logo' }}">
               <a href="/"></a>
           </div>
           <nav class="header_menu hidden-md">
               <ul>
-          <li><a href = "/agencys" class="link" >Агентство</a ></li >
+          <li>
+            <a href = "/agencys" class="link" >Агентство</a ></li >
             <li><a href = "/service" class="link" >Услуги</a ></li >
             <li><a href = "/portfolio" class="link" >Портфолио</a ></li >
             <li><a href = "/blog" class="link" >Блог</a ></li >

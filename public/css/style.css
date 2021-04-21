@@ -7925,3 +7925,9 @@ input[type=checkbox]{
     background:#1b75c0;
 }
 
+.slider_list ul p{
+	position: relative;
+    line-height: 34px;
+    font-size: 1.5em;
+    color: #000;
+}

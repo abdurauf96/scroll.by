@@ -8,7 +8,9 @@ class MainController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $slayders=\App\Models\Slayder::all();
+        $services=\App\Models\Service::all();
+        return view('welcome', compact('slayders', 'services'));
     }
 
     public function contact()
