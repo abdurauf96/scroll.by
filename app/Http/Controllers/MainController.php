@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use \App\Models\Slayder;
 use \App\Models\Service;
 use \App\Models\BlokAbout;
+use \App\Models\Review;
+use \App\Models\Blog;
 
 class MainController extends Controller
 {
@@ -14,8 +16,10 @@ class MainController extends Controller
        
         $slayders=Slayder::all();
         $services=Service::all();
+        $reviews=Review::where('featured', 1)->orderBy('order')->get();
+        $blogs=Blog::where('featured', 1)->orderBy('order')->get();
         $about=BlokAbout::first();
-        return view('welcome', compact('slayders', 'services', 'about'));
+        return view('welcome', compact('slayders', 'services', 'about', 'reviews', 'blogs'));
     }
 
     public function contact()
@@ -43,9 +47,11 @@ class MainController extends Controller
         return view('blog');
     }
 
-    public function blogDetail()
+    public function blogDetail($slug)
     {
-        return view('blog_detail');
+        $blog=Blog::whereSlug($slug)->first();
+        $blogs=Blog::where('category', $blog->category)->where('id', '!=', $blog->id)->get();
+        return view('blog_detail', compact('blog', 'blogs'));
     }
 
     public function portfolio()

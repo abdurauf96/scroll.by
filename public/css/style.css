@@ -4304,7 +4304,7 @@ section.section_agancy.two{
 	background-color:#f4f6fa;
 	padding:55px 280px 145px 85px;
 	margin-bottom:90px;
-	visibility:hidden;
+	
 	margin-left:17em;
 }
 .btn__reviews{
@@ -7930,4 +7930,7 @@ input[type=checkbox]{
     line-height: 34px;
     font-size: 1.5em;
     color: #000;
+}
+.fa-telegram-plane{
+	background-color: #1767b9;
 }
