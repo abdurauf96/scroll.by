@@ -10,6 +10,7 @@ use \App\Models\Review;
 use \App\Models\Blog;
 use \App\Models\Project;
 use \App\Models\ProjectCategory;
+use \App\Models\Client;
 
 class MainController extends Controller
 {
@@ -17,11 +18,12 @@ class MainController extends Controller
     {
        
         $slayders=Slayder::all();
+        $clients=Client::orderBy('order')->get();
         $services=Service::all();
         $reviews=Review::where('featured', 1)->orderBy('order')->get();
         $blogs=Blog::where('featured', 1)->orderBy('order')->get();
         $about=BlokAbout::first();
-        return view('welcome', compact('slayders', 'services', 'about', 'reviews', 'blogs'));
+        return view('welcome', compact('slayders', 'services', 'about', 'reviews', 'blogs', 'clients'));
     }
 
     public function contact()
