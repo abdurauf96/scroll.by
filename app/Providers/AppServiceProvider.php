@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('sections.header', function($view){
+            $portfolio_categories=\App\Models\ProjectCategory::all();
+            $services=\App\Models\Service::all();
+            $view->with(compact('portfolio_categories', 'services'));
+        });
     }
 }

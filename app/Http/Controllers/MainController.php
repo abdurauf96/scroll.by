@@ -8,6 +8,8 @@ use \App\Models\Service;
 use \App\Models\BlokAbout;
 use \App\Models\Review;
 use \App\Models\Blog;
+use \App\Models\Project;
+use \App\Models\ProjectCategory;
 
 class MainController extends Controller
 {
@@ -54,9 +56,27 @@ class MainController extends Controller
         return view('blog_detail', compact('blog', 'blogs'));
     }
 
-    public function portfolio()
+    public function portfolio($slug=null)
     {
-        return view('portfolio');
+        if($slug){
+            $projectCategory=ProjectCategory::whereSlug($slug)->first();
+            $category_id=$projectCategory->id;
+            $projects=Project::whereHas('categories', function($q) use($category_id){
+                $q->where('project_category_id', $category_id);
+            })
+            ->orderBy('order')
+            ->get();
+        }else{
+            $projects=Project::orderBy('order')
+            ->get();
+        }
+
+        $project_categories=ProjectCategory::all();
+
+        return view('portfolio', [
+            'projects'=>$projects,
+            'project_categories'=>$project_categories    
+        ]);
     }
 
     public function services()

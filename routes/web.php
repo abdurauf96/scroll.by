@@ -21,7 +21,7 @@ Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
 Route::get('/vacancy', [MainController::class, 'vacancy'])->name('vacancy');
 Route::get('/blog', [MainController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [MainController::class, 'blogDetail'])->name('blogDetail');
-Route::get('/portfolio', [MainController::class, 'portfolio'])->name('portfolio');
+Route::get('/portfolio/{slug?}', [MainController::class, 'portfolio'])->name('portfolio');
 Route::get('/services', [MainController::class, 'services'])->name('services');
 
 Route::get('/service/razrabotka-sajtov', [ServiceController::class, 'siteDevelopment'])->name('siteDevelopment');

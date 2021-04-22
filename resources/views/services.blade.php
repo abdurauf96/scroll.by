@@ -26,7 +26,7 @@
                     @foreach ($services as $service)
                     <div class="col-md-12 col-lg-6">
                         <div class="list_wrapper_nav services_2" data-aos="fade-up">
-                            <a href="/servies_webdevel?filter=разработка сайтов">
+                            <a href="{{ $service->url }}">
                                 <div class="img-wrap"> <img src="{{ Voyager::image($service->image) }}" alt="" class="first first-one">
                                     <div class="bg-circl"></div>
                                     <!--  <img src="/img/paralax/bg-svg-1.svg" alt="" class="first first-two">
