@@ -40,7 +40,7 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/55919026" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
  <script>
@@ -103,11 +103,10 @@
                     </div>  
    
                     <div class="subscription_form">
-                        <form id="subs">
+                        <form action="/subscribe" method="post" id="subs_form">
+                            @csrf
                             <div class="group">
-                                <input type="hidden" name="mail" value="info@scroll.by">
-                                <input type="hidden" name="subject" value="Подписка на новости и акции">
-                                <input type="email" name="email" required="required" pattern="[a-zA-Z0-9_-]+\.)*[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]" ><span class="highlight"></span><span class="bar bar_file"></span>
+                                <input type="email" name="email" required="required" id="sub_email"  ><span class="highlight"></span><span class="bar bar_file"></span>
                                 <label>Подписаться на новости и акции<span class="clip"><i class="fas fa-right"></i></span> </label>
                             </div>
                             <button type="submit" class="button buttonTransparent"><img src="/img/arrow-leftt.png" alt=""></button>
@@ -197,7 +196,7 @@
                             <h2 class="text-center blue">Спасибо за ваш <br>отзыв</h2>
                             <div class="icon"><img src="/img/succses.png" alt=""></div>
                             <div class="text" style="margin-top: 20px;">После модерации он появится у нас на сайте!<br>
-   Будем рады дальнейшему сотрудничеству.</div>
+                                        Будем рады дальнейшему сотрудничеству.</div>
                         </div>
                     </div>
                 </div>
@@ -276,19 +275,19 @@
                         </div>
                         <div class="modal-body">
                             <h2 class="text-center blue">Оставить отзыв</h2>
-                            <form action="/app/mail_path" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
-                                <input type="hidden" value="info@scroll.by" name="mail_to">
+                            <form action="#" id="review_form" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+                                
                                 <input type="hidden" value="Оставить отзыв" name="subject">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="Имя" pattern="^[а-яА-ЯеЁa-zA-Z\ \t]+$" required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" name="name"  required><span class="highlight"></span><span class="bar"></span>
                                             <label>Представьтесь, пожалуйста</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="Телефон" pattern="^(?=.*[0-9])[- +()0-9]+$"  required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" name="phone"  required><span class="highlight"></span><span class="bar"></span>
                                             <label>Номер Вашего телефона</label>
                                         </div>
                                     </div>
@@ -300,20 +299,20 @@
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="name-organization" required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" name="company" required><span class="highlight"></span><span class="bar"></span>
                                             <label>Название организации</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group icon" style="border-bottom: 1px solid #000;">
-                                            <input type="file" class="chooseFileRev" style="opacity:0;" name="mail_file">
+                                            <input type="file" class="chooseFileRev" style="opacity:0;" name="file">
                                             <label>Прикрепить фото<span class="clip"><i class="fal fa-paperclip"></i></span> </label>
                                             <div class="text-file-rev"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="message" required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" name="comment" required><span class="highlight"></span><span class="bar"></span>
                                             <label>Комментарий</label>
                                         </div>
                                     </div>
@@ -405,53 +404,49 @@
                     <h2 class="text-center">Оставить заявку</h2>
                     <div class="email_main">
                         <div class="email_form">
-                            <form action="/app/mail_path" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
-                                <input type="hidden" value="info@scroll.by" name="mail_to">
-                                <input type="hidden" value="Оставить заявку" name="subject">
+                            <form action="#" id="zayafka_form" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+                               @csrf
+                               <input type="hidden" value="Оставить заявку" name="subject">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="Имя" pattern="^[а-яА-ЯеЁa-zA-Z\ \t]+$" required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" class="name" name="name"  required><span class="highlight "></span><span class="bar"></span>
                                             <label>Представьтесь, пожалуйста</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="Телефон" pattern="^(?=.*[0-9])[- +()0-9]+$" required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" class="phone" name="phone" required><span class="highlight"></span><span class="bar"></span>
                                             <label>Номер Вашего телефона</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="email" name="email" required><span class="highlight"></span><span class="bar"></span>
+                                            <input type="email" class="email" name="email" required><span class="highlight"></span><span class="bar"></span>
                                             <label>Ваш e-mail</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group select icon">
-                                            <select name="service">
+                                            <select name="service" class="service">
                                                 <option value="" >Выберите необходимую услугу</option>
-                                                <option value="Разработка сайтов">Разработка сайтов</option>
-                                                <option value="SEO продвижение">SEO продвижение</option>
-                                                <option value="Контекстная реклама в Яндекс и Google">Контекстная реклама в Яндекс и Google</option>
-                                                <option value="Продвижение в социальных сетях (SMM)">Продвижение в социальных сетях (SMM)</option>
-                                                <option value="Фирменный стиль и дизайн">Фирменный стиль и дизайн</option>
-                                                <option value="Техническая поддержка">Техническая поддержка</option>
-                                                <option value="Создание контента">Создание контента</option>
-                                                <option value="Защита бренда в сети интернет">Защита бренда в сети интернет</option>
+                                                @foreach ($services as $ser)
+                                                <option value="{{ $ser->title }}">{{ $ser->title }}</option>
+                                                @endforeach
+                                                
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group icon" style="border-bottom: 1px solid #000;">
-                                            <input type="file" class="chooseFile" style="opacity:0;" name="mail_file">
+                                            <input type="file" class="chooseFile file" style="opacity:0;" name="file">
                                             <label>Прикрепить файл (бриф) <span class="clip"><i class="fal fa-paperclip"></i></span> </label>
                                             <div class="text-file-req"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="group">
-                                            <input type="text" name="message"><span class="highlight"></span><span class="bar"></span>
+                                            <input type="text" name="comment" class="comment"><span class="highlight"></span><span class="bar"></span>
                                             <label>Комментарий</label>
                                         </div>
                                     </div>
@@ -483,19 +478,19 @@
                 <div class="modal-body">
                     <h2 class="text-center">Получить консультацию</h2>
                     <div class="email_main">
-                        <form action="/app/mail" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
-                            <input type="hidden" value="info@scroll.by" name="mail">
+                        <form action="#" method="POST" id="get_consult" accept-charset="utf-8" enctype="multipart/form-data">
+                           
                             <input type="hidden" value="Получить консультацию" name="subject">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="group">
-                                        <input type="text" name="Имя" pattern="^[а-яА-ЯеЁa-zA-Z\ \t]+$" required><span class="highlight"></span><span class="bar"></span>
+                                        <input type="text" name="name" required><span class="highlight"></span><span class="bar"></span>
                                         <label>Представьтесь, пожалуйста</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="group">
-                                        <input type="text" name="Телефон" pattern="^(?=.*[0-9])[- +()0-9]+$"  required><span class="highlight"></span><span class="bar"></span>
+                                        <input type="text" name="phone"  required><span class="highlight"></span><span class="bar"></span>
                                         <label>Номер Вашего телефона</label>
                                     </div>
                                 </div>
@@ -533,13 +528,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="group">
-                                        <input type="text" name="Имя" pattern="^[а-яА-ЯеЁa-zA-Z]+$" required><span class="highlight"></span><span class="bar"></span>
+                                        <input type="text" name="Имя"  required><span class="highlight"></span><span class="bar"></span>
                                         <label>Представьтесь, пожалуйста</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="group">
-                                        <input type="text" name="Телефон" pattern="^(?=.*[0-9])[- +()0-9]+$"  required><span class="highlight"></span><span class="bar"></span>
+                                        <input type="text" name="Телефон"  required><span class="highlight"></span><span class="bar"></span>
                                         <label>Номер Вашего телефона</label>
                                     </div>
                                 </div>

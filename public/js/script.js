@@ -1,5 +1,130 @@
+//форма подписаться на новости
+$(document).ready(function () {
+    $("#subs_form").submit(function (event) {
+      var email=$('#sub_email').val();
+      var form = $(this);
+      if(email!=''){
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "POST",
+            url: "/subscribe",
+            data: {email:email},
+          }).done(function (data) {
+            $('.modal').modal('hide');
+            $("#modal-succses-subs").modal('show');
+            setTimeout(function() {$('#modal-succses-subs').modal('hide') }, 3000);
+            form.trigger('reset');
+          });
+      }
+    });
+  });
 
 
+  //форма оставить заявку
+  $(document).ready(function() {
+    $('form[id*="zayafka_form"]').submit(function( event ) {
+        event.preventDefault();
+        form = $(this);
+        var formData = new FormData(this);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "POST",
+            url: "/zayafka",
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                $('.modal').modal('hide');
+                $("#modal-succses").modal('show');
+                setTimeout(function() {$('#modal-succses').modal('hide') }, 3000);
+                form.trigger('reset');
+            }
+        });
+    });
+});
+
+//оставить отзыв
+$(document).ready(function() {
+    $('form[id*="review_form"]').submit(function( event ) {
+        event.preventDefault();
+        form = $(this);
+        var formData = new FormData(this);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "POST",
+            url: "/send_review",
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                $('.modal').modal('hide');
+                $("#modal-succses-review").modal('show');
+                setTimeout(function() {$('#modal-succses-review').modal('hide') }, 3000);
+                form.trigger('reset');
+            }
+        });
+    });
+});
+
+//Получить консультацию
+$(document).ready(function() {
+    $('form[id*="get_consult"]').submit(function( event ) {
+        event.preventDefault();
+        form = $(this);
+        var formData = new FormData(this);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "POST",
+            url: "/get_consult",
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                $('.modal').modal('hide');
+                $("#modal-succses-question").modal('show');
+                setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
+                form.trigger('reset');
+            }
+        });
+    });
+});
+
+//Задайте вопрос
+$(document).ready(function() {
+    $('form[id*="send_question"]').submit(function( event ) {
+        event.preventDefault();
+        form = $(this);
+        var formData = new FormData(this);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: "POST",
+            url: "/send_question",
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                $('.modal').modal('hide');
+                $("#modal-succses-question").modal('show');
+                setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
+                form.trigger('reset');
+            }
+        });
+    });
+});
 
 $(function(){
     $('body').on('click', '.btn_our_work', function (e) {
@@ -116,53 +241,9 @@ $(function(){
     });
 });
 
-$(document).ready(function() {
-    $('form[id*="form"]').submit(function( event ) {
-        event.preventDefault();
-        var array = $(this).serializeArray(),
-            form = $(this);
-
-        $.ajax({
-            type: "POST",
-            url: "/app/mail",
-            data: array,
-            dataType: 'html',
-            success: function(response){
-                $('.modal').modal('hide');
-                $("#modal-succses").modal('show');
-                setTimeout(function() {$('#modal-succses').modal('hide') }, 3000);
-                form.trigger('reset');
-            }
-        });
-        return false;
-    });
-
-});
+// 
 
 
-
-$(document).ready(function() {
-    $('form[id="subs"]').submit(function( event ) {
-        event.preventDefault();
-        var array = $(this).serializeArray(),
-            form = $(this);
-
-        $.ajax({
-            type: "POST",
-            url: "/app/mail",
-            data: array,
-            dataType: 'html',
-            success: function(response){
-                $('.modal').modal('hide');
-                $("#modal-succses-subs").modal('show');
-                setTimeout(function() {$('#modal-succses-subs').modal('hide') }, 3000);
-                form.trigger('reset');
-            }
-        });
-        return false;
-    });
-
-});
 
 
 

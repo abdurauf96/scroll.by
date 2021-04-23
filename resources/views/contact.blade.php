@@ -54,19 +54,19 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 form-cont">
-                        <form class="send_resume" action="/app/mail_path" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
-                            <input type="hidden" value="info@scroll.by" name="mail_to" />
+                        <form class="send_resume" id="send_question" action="#" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+                           
                             <input type="hidden" value="Задайте вопрос" name="subject" />
-                            <input type="hidden" value="1" name="cont" />
+                            
                             <h3>Задайте вопрос</h3>
     
                             <div class="form">
                                 <div class="group">
-                                    <input type="name" name="Имя" required="required" pattern="^[а-яА-ЯеЁa-zA-Z\ \t]+$" /><span class="highlight"></span><span class="bar bar_file"></span>
+                                    <input type="name" name="name" required="required" pattern="^[а-яА-ЯеЁa-zA-Z\ \t]+$" /><span class="highlight"></span><span class="bar bar_file"></span>
                                     <label>Представьтесь, пожалуйста<span class="clip"></span> </label>
                                 </div>
                                 <div class="group">
-                                    <input type="number" name="Телефон" /><span class="highlight"></span><span class="bar bar_file"></span>
+                                    <input type="number" name="phone" /><span class="highlight"></span><span class="bar bar_file"></span>
                                     <label>Номер Вашего телефона<span class="clip"></span> </label>
                                 </div>
                                 <div class="group">
@@ -74,7 +74,7 @@
                                     <label>Ваш e-mail<span class="clip"></span> </label>
                                 </div>
                                 <div class="group">
-                                    <input type="text" name="Сообщение" /><span class="highlight"></span><span class="bar bar_file"></span>
+                                    <input type="text" name="comment" /><span class="highlight"></span><span class="bar bar_file"></span>
                                     <label>Хотите что-то сказать?<span class="clip"></span> </label>
                                 </div>
                                 <div class="row">

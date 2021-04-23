@@ -28,5 +28,15 @@ class AppServiceProvider extends ServiceProvider
             $services=\App\Models\Service::all();
             $view->with(compact('portfolio_categories', 'services'));
         });
+
+        view()->composer('sections.form', function($view){
+            $services=\App\Models\Service::all();
+            $view->with(compact('services'));
+        });
+
+        view()->composer('layouts.app', function($view){
+            $services=\App\Models\Service::all();
+            $view->with(compact('services'));
+        });
     }
 }
