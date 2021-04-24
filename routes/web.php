@@ -26,14 +26,14 @@ Route::get('/portfolio/{slug?}', [MainController::class, 'portfolio'])->name('po
 Route::get('/services', [MainController::class, 'services'])->name('services');
 
 Route::get('/service/razrabotka-sajtov', [ServiceController::class, 'siteDevelopment'])->name('siteDevelopment');
-Route::get('/service/seo-prodvizhenie', [ServiceController::class, 'seo'])->name('seo');
+Route::get('/service/prodvizhenie-sajtov', [ServiceController::class, 'seo'])->name('seo');
 Route::get('/service/kontekstnaya-reklama', [ServiceController::class, 'reklama'])->name('reklama');
-Route::get('/service/prodvizhenie-v-socialьnyh-setyah', [ServiceController::class, 'smm'])->name('smm');
-Route::get('/service/firmennyj-stilь-i-dizajn', [ServiceController::class, 'design'])->name('design');
+Route::get('/service/smm', [ServiceController::class, 'smm'])->name('smm');
+Route::get('/service/firmennyj-stil', [ServiceController::class, 'design'])->name('design');
 Route::get('/service/tehnicheskaya-podderzhka', [ServiceController::class, 'support'])->name('support');
 Route::get('/service/sozdanie-kontenta', [ServiceController::class, 'creatingContent'])->name('creatingContent');
 Route::get('/service/zashita-brenda-v-seti-internet', [ServiceController::class, 'protectBrand'])->name('protectBrand');
-Route::get('/service/vnedrenie-crm-«bitriks24»', [ServiceController::class, 'bitriks'])->name('bitriks');
+Route::get('/service/1s-bitriks', [ServiceController::class, 'bitriks'])->name('bitriks');
 
 Route::post('/subscribe', [QueryController::class, 'subscribe']);
 Route::post('/zayafka', [QueryController::class, 'zayafka']);

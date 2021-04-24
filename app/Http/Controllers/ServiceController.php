@@ -40,7 +40,7 @@ class ServiceController extends Controller
     {
         return view('services.creating_content');
     }
-
+    
     public function protectBrand()
     {
         return view('services.protect_brand');
