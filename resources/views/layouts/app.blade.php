@@ -5,7 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <title>Scroll Media Solutions — Разработка и продвижение сайтов</title><meta name = "description" content = "" ><meta name="keywords" content="">        <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">-->
+    <title>{{ MetaTag::get('title') }}</title>
+    {!! MetaTag::tag('description') !!}
+    {!! MetaTag::tag('keywords') !!}
+    {!! MetaTag::twitterCard() !!}
+    {!! MetaTag::openGraph() !!}
+    {{-- <meta name = "description" content = "" >
+    <meta name="keywords" content="">         --}}
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">-->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="/img/a-master-favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
@@ -16,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <meta name="yandex-verification" content="837eae9361188a12" />
     <meta name="google-site-verification" content="rY2Y2-1aZ-tprl1P0pAwq3ZbJ3uHDeXOTCsr-YE05o8" />
+   
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?..."></script>
     <script>
@@ -69,15 +77,15 @@
                     <div class="contact_info_block_1">
                         <div class="row">
                             <div class="col-md-4">
-                                г. Барановичи, <br> ул. Притыцкого 67
+                                {!! $link->addres !!}
                             </div>
                             <div class="col-md-4">
-                                info@scroll.by
+                                {{ $link->email }}
                             </div>
                             <div class="col-md-4">
-                                <a href="tel:+375 44 588-77-11 
+                                <a href="tel:{{ $link->phone }} 
    ">
-                                    +375 44 588-77-11 
+                                    {{ $link->phone }} 
                                 </a>
    
                             </div>
@@ -90,15 +98,15 @@
                     <div class="info_wrap"> 
                         <div class="info">
                             <span>skype:</span>
-                            <p>scrollby</p>
+                            <p>{{ $link->skype }}</p>
                         </div>
                         <div class="info">
                             <span>viber:</span>
-                            <p>+375 44 588-77-11</p>
+                            <p>{{ $link->viber }}</p>
                         </div>
                         <div class="info">
                             <span>telegram:</span>
-                            <p>@scrollby</p>
+                            <p>{{ $link->telegram }}</p>
                         </div>
                     </div>  
    
@@ -142,9 +150,9 @@
                     <div class="social_link">
                         <div class="col text-center">
                             <ul>
-                                                                 <li><a href="https://www.facebook.com/scrollmediaby/">facebook</a></li>
-                                                                     <li><a href="https://www.instagram.com/scroll_media/">instagram</a></li>
-                                                                     <li><a href="https://vk.com/scroll_media">vkontakte</a></li>
+                                                                 <li><a href="{{ $link->facebook }}">facebook</a></li>
+                                                                     <li><a href="{{ $link->instagram }}">instagram</a></li>
+                                                                     <li><a href="{{ $link->vkontakte }}">vkontakte</a></li>
                                                                  </ul>
                             </div>
                         </div>

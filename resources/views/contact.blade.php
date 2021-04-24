@@ -30,26 +30,25 @@
                             <span>Звоните</span>
                             <p class="numb_font">
                                 <a
-                                    href="tel:+375 44 588-77-11" >
-                                    +375 44 588-77-11
+                                    href="tel:{{ $link->phone }}" >
+                                    {{ $link->phone }}
                                 </a>
                                 <span class="text">Дополнительные номера</span>
-                                <span class="dop-phone"><a href="tel:+375 29 790-76-54">+375 29 790-76-54</a></span>
-                                <span class="dop-phone"><a href="tel:+375 44 722-80-11">+375 44 722-80-11</a></span>
+                                <span class="dop-phone"><a href="tel:{{ $link->phone2 }}">{{ $link->phone2 }}</a></span>
+                                <span class="dop-phone"><a href="tel:{{ $link->phone3 }}">{{ $link->phone3 }}</a></span>
                             </p>
                             <span>Пишите</span>
-                            <p>info@scroll.by</p>
+                            <p>{{ $link->email }}</p>
                             <span>Заезжайте</span>
                             <p>
-                                г. Барановичи, <br />
-                                ул. Притыцкого 67
+                                {!! $link->addres !!}
                             </p>
                             <span>Мы в мессенджерах</span>
                             <div class="block_contacts_icon">
                                 <a href="viber://chat?number=+375 44 588-77-11" target="_blank" class="v_soc"><i class="fab fa-viber"></i></a>
                                 <a href="skype:scrollby?chat" class="s_soc" target="_blank"><i class="fab fa-skype"></i></a>
-                                <a href="https://telegram.me/@scrollby" class="t_soc" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                                <a href="whatsapp://send?phone=+26726274698274" class="w_soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://telegram.me/{{ $link->telegram }}" class="t_soc" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                                <a href="whatsapp://send?phone={{ $link->whatsapp }}" class="w_soc" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>

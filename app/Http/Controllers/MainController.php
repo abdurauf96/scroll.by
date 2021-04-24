@@ -11,7 +11,8 @@ use \App\Models\Blog;
 use \App\Models\Project;
 use \App\Models\ProjectCategory;
 use \App\Models\Client;
-
+use \App\Models\HomePage;
+use MetaTag;
 class MainController extends Controller
 {
     public function index($category=null, $slug=null)
@@ -23,12 +24,19 @@ class MainController extends Controller
         $reviews=Review::where('featured', 1)->orderBy('order')->get();
         $blogs=Blog::where('featured', 1)->orderBy('order')->get();
         $about=BlokAbout::first();
+        $homepage=HomePage::first();
+        
+        MetaTag::set('title', $homepage->title);
+        MetaTag::set('description', $homepage->meta_description);
+        MetaTag::set('keywords', $homepage->meta_keywords);
+        
         return view('welcome', compact('slayders', 'services', 'about', 'reviews', 'blogs', 'clients'));
     }
 
     public function contact()
     {
-        return view('contact');
+        $link=\App\Models\Link::first();
+        return view('contact', compact('link'));
     }
 
     public function agency()

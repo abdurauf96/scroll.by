@@ -26,7 +26,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('sections.header', function($view){
             $portfolio_categories=\App\Models\ProjectCategory::all();
             $services=\App\Models\Service::all();
-            $view->with(compact('portfolio_categories', 'services'));
+            $link=\App\Models\Link::first();
+            $view->with(compact('portfolio_categories', 'services', 'link'));
         });
 
         view()->composer('sections.form', function($view){
@@ -36,7 +37,8 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('layouts.app', function($view){
             $services=\App\Models\Service::all();
-            $view->with(compact('services'));
+            $link=\App\Models\Link::first();
+            $view->with(compact('services', 'link'));
         });
     }
 }

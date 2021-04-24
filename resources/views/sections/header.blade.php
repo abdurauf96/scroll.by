@@ -61,13 +61,13 @@
                 <div class="col-sm-12 col-md-3 category_list two">
                   <h2><a href="/contact">Контакты</a></h2>
 											<div class="block_contacts_wrapper">
-												<p class="numb_font"> <a href="tel:+375 44 588-77-11 ">
-                        +375 44 588-77-11 
+												<p class="numb_font"> <a href="tel:+{{ $link->phone }} ">
+                        {{ $link->phone }} 
                       </a> </p>
-												<p>info@scroll.by</p>
-												<p>г. Барановичи,
-													<br> ул. Притыцкого 67</p> <span>Мы в мессенджерах</span>
-												<div class="block_contacts_icon"> <a href="viber://chat?number=+375 44 588-77-11" target='_blank' class="v_soc"><i class="fab fa-viber"></i></a> <a href="skype:scrollby?chat" target='_blank' class="s_soc"><i class="fab fa-skype"></i></a> <a href="https://telegram.me/@scrollby" target='_blank' class="t_soc"><i class="fab fa-telegram-plane"></i></a> <a href="whatsapp://send?phone=+26726274698274" target='_blank' class="w_soc"><i class="fab fa-whatsapp"></i></a> </div>
+												<p>{{ $link->email }}</p>
+												<p> {!! $link->addres !!}</p> <span>Мы в мессенджерах</span>
+												<div class="block_contacts_icon"> <a href="viber://chat?number={{ $link->whatsapp }}" target='_blank' class="v_soc"><i class="fab fa-viber"></i></a> 
+													<a href="skype:scrollby?chat" target='_blank' class="s_soc"><i class="fab fa-skype"></i></a> <a href="https://telegram.me/{{ $link->telegram }}" target='_blank' class="t_soc"><i class="fab fa-telegram-plane"></i></a> <a href="whatsapp://send?phone={{ $link->whatsapp }}" target='_blank' class="w_soc"><i class="fab fa-whatsapp"></i></a> </div>
 											</div>
 				</div>
 			</div>
@@ -78,9 +78,9 @@
 						<div class="social_link">
 							<div class="col text-center">
 								<ul>
-									<li><a href="https://www.facebook.com/scrollmediaby/">facebook</a></li>
-									<li><a href="https://www.instagram.com/scroll_media/">instagram</a></li>
-									<li><a href="https://vk.com/scroll_media">vkontakte</a></li>
+									<li><a href="{{ $link->facebook }}">facebook</a></li>
+									<li><a href="{{ $link->instagram }}">instagram</a></li>
+									<li><a href="{{ $link->vkontakte }}">vkontakte</a></li>
 								</ul>
 							</div>
 						</div>
