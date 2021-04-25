@@ -19,9 +19,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul>
-							<li class="active"><a href="agency" class="link">Об агентстве</a></li>
-							<li><a href="reviews" class="link">Отзывы</a></li>
-							<li><a href="jobs" class="link">Вакансии</a></li>
+							<li class="active"><a href="/agency" class="link">Об агентстве</a></li>
+							<li><a href="/reviews" class="link">Отзывы</a></li>
+							<li><a href="/vacancy" class="link">Вакансии</a></li>
 						</ul>
 					</div>
 				</div>

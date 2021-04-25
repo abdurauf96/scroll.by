@@ -18,6 +18,8 @@ class CreateBlokAboutsTable extends Migration
             $table->string('title');
             $table->text('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_alt')->nullable();
+            $table->string('image_title ')->nullable();
             $table->timestamps();
         });
     }

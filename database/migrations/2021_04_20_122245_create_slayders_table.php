@@ -17,6 +17,8 @@ class CreateSlaydersTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_alt')->nullable();
+            $table->string('image_title ')->nullable();
             $table->timestamps();
         });
     }

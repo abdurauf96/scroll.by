@@ -36,7 +36,7 @@
                     @foreach ($projects as $project)
                     <div class="col-sm-12 col-md-6 wow fadeInDown" data-wow-delay=".3s">
                         <a href="{{ $project->url }}" target="_blank" rel="nofollow" class="portfolio-item-link">
-                            <div class="block_item"> <img src="{{ Voyager::image($project->image) }}" alt="">
+                            <div class="block_item"> <img src="{{ Voyager::image($project->image) }}" alt="{{ $project->image_alt }}" title="{{ $project->image_title }}">
                                 <div class="overlay"></div>
                                 <div class="block_inner_wrapper">
                                     <div class="block_inner_text">

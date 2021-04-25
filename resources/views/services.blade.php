@@ -27,7 +27,7 @@
                     <div class="col-md-12 col-lg-6">
                         <div class="list_wrapper_nav services_2" data-aos="fade-up">
                             <a href="{{ $service->url }}">
-                                <div class="img-wrap"> <img src="{{ Voyager::image($service->image) }}" alt="" class="first first-one">
+                                <div class="img-wrap"> <img src="{{ Voyager::image($service->image) }}" alt="{{ $service->image_alt }}" title="{{ $service->image_title }}" class="first first-one">
                                     <div class="bg-circl"></div>
                                     <!--  <img src="/img/paralax/bg-svg-1.svg" alt="" class="first first-two">
                                                 <img src="/img/paralax/bg-svg-2.svg" alt="" class="first first-thri"> --></div>

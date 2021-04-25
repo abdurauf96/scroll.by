@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12 col-xl-3">
                 <div class="photo_rev" style="background-image:url({{ Voyager::image($review->logo) }})"></div>
-                <div class="made_rev"> <img data-src="/" class="img-fluid" alt=""> </div>
+                <div class="made_rev"> <img data-src="/" class="img-fluid" alt="{{ $review->image_alt }}" title="{{ $review->image_title }}"> </div>
             </div>
             <div class="col-lg-12 col-xl-9 dercription_wrap">
                 <div class="description_rev"> <strong>{{ $review->title }}</strong>

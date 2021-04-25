@@ -18,6 +18,8 @@ class CreateReviewsTable extends Migration
             $table->string('title')->nullable();
             $table->text('body')->nullable();
             $table->string('logo')->nullable();
+            $table->string('image_alt')->nullable();
+            $table->string('image_title ')->nullable();
             $table->string('image')->nullable();
             $table->integer('order')->nullable();
             $table->string('featured')->nullable();

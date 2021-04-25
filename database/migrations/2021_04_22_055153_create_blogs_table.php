@@ -18,6 +18,8 @@ class CreateBlogsTable extends Migration
             $table->string('title')->nullable();
             $table->text('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_alt')->nullable();
+            $table->string('image_title ')->nullable();
             $table->string('category')->nullable();
             $table->string('featured')->nullable();
             $table->integer('order')->nullable();

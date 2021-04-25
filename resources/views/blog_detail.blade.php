@@ -28,7 +28,7 @@
                         <div class="date-publication"> {{ $blog->created_at->format('d.m.y') }}</div>
                     </div>
                     <div class="col-md-12">
-                        <div class="blog-single-photo"> <img src="{{ Voyager::image($blog->image) }}" alt=""> </div>
+                        <div class="blog-single-photo"> <img src="{{ Voyager::image($blog->image) }}" alt="{{ $blog->image_alt }}" title="{{ $blog->image_title }}"> </div>
                         <div class="blog-single-descr">
                             <div class="col-md-12 col-lg-8 offset-lg-2">
                                 {!! $blog->body !!}

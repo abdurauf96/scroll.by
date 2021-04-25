@@ -16,6 +16,8 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('logo');
+            $table->string('image_alt')->nullable();
+            $table->string('image_title ')->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();
         });

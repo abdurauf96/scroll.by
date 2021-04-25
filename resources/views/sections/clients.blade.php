@@ -16,7 +16,7 @@
       <div class="slider_our_clients" dir="rtl">
         @foreach ($clients as $client)
         <div class="our_clients_item">
-          <img data-src="{{ Voyager::image($client->logo) }}" alt="">
+          <img data-src="{{ Voyager::image($client->logo) }}" alt="{{ $client->image_alt }}" title="{{ $client->image_title }}">
         </div>
         @endforeach      
       </div>

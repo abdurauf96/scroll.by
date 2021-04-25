@@ -11,7 +11,7 @@
         <div class="col-sm-12 col-md-6 blog_item_wrap wow fadeInDown" data-wow-delay=".2s">
             <div class="blog_item">
                 <a href="{{ route('blogDetail', $blog->slug) }}">
-                    <div class="block_photo"> <img src="{{ Voyager::image($blog->image) }}" alt="">
+                    <div class="block_photo"> <img src="{{ Voyager::image($blog->image) }}" alt="{{ $blog->image_alt }}" title="{{ $blog->image_title }}">
                         <div class="overlay"></div>
                         <div class="block_tags"><span>{{ $blog->created_at->format('d.m.y') }}</span> <span>{{ $blog->category=='deal'? 'акция' : 'блог' }}</span> </div>
                     </div>

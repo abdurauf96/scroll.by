@@ -10,7 +10,7 @@ class QueryController extends Controller
     {
         $email=$request->email;
         \App\Models\Email::create($request->all());
-        \Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Subscribe($email));
+        \Mail::to('info@scroll.by')->send(new \App\Mail\Subscribe($email));
        
     }
 
@@ -29,7 +29,7 @@ class QueryController extends Controller
         $data['email']=$request->email;
         $data['service']=$request->service;
         
-        \Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Zayafka($data));
+        \Mail::to('info@scroll.by')->send(new \App\Mail\Zayafka($data));
     }
 
     public function send_review(Request $request)
@@ -47,7 +47,7 @@ class QueryController extends Controller
         $data['email']=$request->email;
         $data['company']=$request->company;
         
-        \Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Review($data));
+        \Mail::to('info@scroll.by')->send(new \App\Mail\Review($data));
         
     }
 
@@ -59,7 +59,7 @@ class QueryController extends Controller
         $data['phone']=$request->phone;
    
         
-        \Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Consult($data));
+        \Mail::to('info@scroll.by')->send(new \App\Mail\Consult($data));
         
     }
 
@@ -72,7 +72,7 @@ class QueryController extends Controller
         $data['comment']=$request->comment;
         $data['email']=$request->email;
         
-        \Mail::to('saydaliyevabdurauf@gmail.com')->send(new \App\Mail\Review($data));
+        \Mail::to('info@scroll.by')->send(new \App\Mail\Review($data));
         
     }
 }
