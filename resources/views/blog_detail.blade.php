@@ -81,7 +81,7 @@
                                     <div class="block_tags"> <span>{{ $item->created_at->format('d.m.y') }}</span> <span>{{ $blog->category=='deal'? 'акция' : 'блог' }}</span> </div>
                                 </div>
                                 <div class="news_title">
-                                    <h3> {{ $blog->title }}</h3> </div>
+                                    <h3> {{ $item->title }}</h3> </div>
                             </a>
                         </div>
                     </div>

@@ -34,6 +34,7 @@ Route::get('/service/tehnicheskaya-podderzhka', [ServiceController::class, 'supp
 Route::get('/service/sozdanie-kontenta', [ServiceController::class, 'creatingContent'])->name('creatingContent');
 Route::get('/service/zashita-brenda-v-seti-internet', [ServiceController::class, 'protectBrand'])->name('protectBrand');
 Route::get('/service/1s-bitriks', [ServiceController::class, 'bitriks'])->name('bitriks');
+Route::get('/service/{slug}', [ServiceController::class, 'viewService']);
 
 Route::post('/subscribe', [QueryController::class, 'subscribe']);
 Route::post('/zayafka', [QueryController::class, 'zayafka']);

@@ -83,9 +83,9 @@
                                 {{ $link->email }}
                             </div>
                             <div class="col-md-4">
-                                <a href="tel:{{ $link->phone }} 
+                                <a href="tel:{{ $link->phone1 }} 
    ">
-                                    {{ $link->phone }} 
+                                    {{ $link->phone1 }} 
                                 </a>
    
                             </div>
@@ -582,6 +582,7 @@
     <!-- <script src="/js/cursor.js"></script> -->
     <script src="{{ asset('js/aos.min.js') }}"></script>
     <script src="{{ asset('js/wow.min.js') }}"></script>
+    @yield('js')
     <!--script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},150);};</script-->
     <script>
         update_img();

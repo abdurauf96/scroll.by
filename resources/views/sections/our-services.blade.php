@@ -26,7 +26,7 @@
 				<div class="slider_item_direction">
 							<div class="style_bg"> <img data-src="{{ Voyager::image($service->image) }}" alt="{{ $service->image_alt }}" title="{{ $service->image_title }}"> </div>
 							<div class="slider_list">
-								<h2><a href="{{ $service->url }}" class="link">{{ $service->title }}</a></h2>
+								<h2><a href="/service/{{ $service->url }}" class="link">{{ $service->title }}</a></h2>
 								<ul>
 									{!! $service->description !!}
 								</ul>

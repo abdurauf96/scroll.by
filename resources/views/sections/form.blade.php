@@ -54,6 +54,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="group">
                             <select name="service">
+                                <option value="" >Выберите необходимую услугу</option>
                                 @foreach ($services as $ser)
                                 <option value="{{ $ser->title }}">{{ $ser->title }}</option>
                                 @endforeach

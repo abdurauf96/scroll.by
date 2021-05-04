@@ -30,8 +30,8 @@
                             <span>Звоните</span>
                             <p class="numb_font">
                                 <a
-                                    href="tel:{{ $link->phone }}" >
-                                    {{ $link->phone }}
+                                    href="tel:{{ $link->phone1 }}" >
+                                    {{ $link->phone1 }}
                                 </a>
                                 <span class="text">Дополнительные номера</span>
                                 <span class="dop-phone"><a href="tel:{{ $link->phone2 }}">{{ $link->phone2 }}</a></span>

@@ -11,17 +11,20 @@ $(document).ready(function () {
             type: "POST",
             url: "/subscribe",
             data: {email:email},
+            cache:false,
           }).done(function (data) {
+            location.reload();
             $('.modal').modal('hide');
             $("#modal-succses-subs").modal('show');
             setTimeout(function() {$('#modal-succses-subs').modal('hide') }, 3000);
             form.trigger('reset');
+            $('#sub_email').attr('placeholder')
           });
       }
     });
   });
 
-
+  
   //форма оставить заявку
   $(document).ready(function() {
     $('form[id*="zayafka_form"]').submit(function( event ) {
@@ -39,6 +42,7 @@ $(document).ready(function () {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses").modal('show');
                 setTimeout(function() {$('#modal-succses').modal('hide') }, 3000);
@@ -65,10 +69,12 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses-review").modal('show');
                 setTimeout(function() {$('#modal-succses-review').modal('hide') }, 3000);
                 form.trigger('reset');
+                
             }
         });
     });
@@ -91,6 +97,7 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses-question").modal('show');
                 setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
@@ -117,6 +124,7 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses-question").modal('show');
                 setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
@@ -243,32 +251,28 @@ $(function(){
 
 // 
 
+// $(document).ready(function() {
+//     $('form[id="question"]').submit(function( event ) {
+//         event.preventDefault();
+//         var array = $(this).serializeArray(),
+//             form = $(this);
 
+//         $.ajax({
+//             type: "POST",
+//             url: "/app/mail",
+//             data: array,
+//             dataType: 'html',
+//             success: function(response){
+//                 $('.modal').modal('hide');
+//                 $("#modal-succses-question").modal('show');
+//                 setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
+//                 form.trigger('reset');
+//             }
+//         });
+//         return false;
+//     });
 
-
-
-$(document).ready(function() {
-    $('form[id="question"]').submit(function( event ) {
-        event.preventDefault();
-        var array = $(this).serializeArray(),
-            form = $(this);
-
-        $.ajax({
-            type: "POST",
-            url: "/app/mail",
-            data: array,
-            dataType: 'html',
-            success: function(response){
-                $('.modal').modal('hide');
-                $("#modal-succses-question").modal('show');
-                setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
-                form.trigger('reset');
-            }
-        });
-        return false;
-    });
-
-});
+// });
 
 function searhes(number,naim){
     var result = '';

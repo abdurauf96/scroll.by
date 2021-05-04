@@ -96,4 +96,13 @@ class ServiceController extends Controller
         MetaTag::set('keywords', $service->meta_keywords);
         return view('services.bitriks');
     }
+
+    public function viewService($slug)
+    {
+        $parent_service=Service::where('url', $slug)->first();
+       
+        $service=\App\Models\ServiceDetail::where('service_id', $parent_service->id)->first();
+        
+        return view('services.viewService', compact('service'));
+    }
 }

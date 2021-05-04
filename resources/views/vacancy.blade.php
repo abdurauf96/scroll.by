@@ -35,26 +35,12 @@
                             <div class="jobs_list">
                                 <h3>Выберите интересующую вакансию</h3>
                                 <div> </div>
+                                @foreach ($vacancies as $item)
                                 <div class="form-group">
-                                    <input type="radio" name="service" value="Разработчик 1С Битрикс" class="option-input_radio" id="vakansii1" placeholder="">
-                                    <label for="vakansii1">Разработчик 1С Битрикс</label>
+                                    <input type="radio" name="service" value="{{ $item->title }}" class="option-input_radio" id="vakansii1" placeholder="">
+                                    <label for="vakansii1">{{ $item->title }}</label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="radio" name="service" value="Фронт-энд разработчик" class="option-input_radio" id="vakansii2" placeholder="">
-                                    <label for="vakansii2">Фронт-энд разработчик</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="radio" name="service" value="Бэк-энд разработчик" class="option-input_radio" id="vakansii3" placeholder="">
-                                    <label for="vakansii3">Бэк-энд разработчик</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="radio" name="service" value="Менеджер проектов" class="option-input_radio" id="vakansii4" placeholder="">
-                                    <label for="vakansii4">Менеджер проектов</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="radio" name="service" value="Менеджер по продажам" class="option-input_radio" id="vakansii5" placeholder="">
-                                    <label for="vakansii5">Менеджер по продажам</label>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">

@@ -24,6 +24,7 @@ class CreateServicesTable extends Migration
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
+            $table->string('image_onpage')->nullable();
             $table->timestamps();
         });
     }
