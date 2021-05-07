@@ -15,6 +15,10 @@ use App\Http\Controllers\QueryController;
 |
 */
 
+Route::get('/cache', function(){
+    \Artisan::call('config:cache');
+    return back();
+} );
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/agency', [MainController::class, 'agency'])->name('agency');

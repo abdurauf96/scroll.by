@@ -9,8 +9,9 @@ class ServiceController extends Controller
 {
     public function siteDevelopment()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
+       
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
         MetaTag::set('keywords', $service->meta_keywords);
@@ -19,7 +20,7 @@ class ServiceController extends Controller
 
     public function seo()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -29,7 +30,7 @@ class ServiceController extends Controller
 
     public function reklama()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -39,7 +40,7 @@ class ServiceController extends Controller
 
     public function smm()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -49,7 +50,7 @@ class ServiceController extends Controller
 
     public function design()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -59,7 +60,7 @@ class ServiceController extends Controller
 
     public function support()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -69,7 +70,7 @@ class ServiceController extends Controller
 
     public function creatingContent()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -79,7 +80,7 @@ class ServiceController extends Controller
     
     public function protectBrand()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -89,7 +90,7 @@ class ServiceController extends Controller
 
     public function bitriks()
     {
-        $url='/'.request()->path();
+        $url=request()->segment(2);
         $service=Service::where('url', $url)->first();
         MetaTag::set('title', $service->meta_title);
         MetaTag::set('description', $service->meta_description);
@@ -100,7 +101,12 @@ class ServiceController extends Controller
     public function viewService($slug)
     {
         $parent_service=Service::where('url', $slug)->first();
-       
+        if(!$parent_service){
+            abort(404);
+        }
+        MetaTag::set('title', $parent_service->meta_title);
+        MetaTag::set('description', $parent_service->meta_description);
+        MetaTag::set('keywords', $parent_service->meta_keywords);
         $service=\App\Models\ServiceDetail::where('service_id', $parent_service->id)->first();
         
         return view('services.viewService', compact('service'));

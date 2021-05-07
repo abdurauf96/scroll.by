@@ -1,7 +1,9 @@
 //форма подписаться на новости
 $(document).ready(function () {
     $("#subs_form").submit(function (event) {
-      var email=$('#sub_email').val();
+      event.preventDefault();
+     
+      var email = new FormData(this);
       var form = $(this);
       if(email!=''){
         $.ajax({
@@ -10,15 +12,16 @@ $(document).ready(function () {
             },
             type: "POST",
             url: "/subscribe",
-            data: {email:email},
+            data: email,
             cache:false,
-          }).done(function (data) {
+            contentType: false,
+            processData: false,
+          }).done(function (response) {
             location.reload();
-            $('.modal').modal('hide');
             $("#modal-succses-subs").modal('show');
             setTimeout(function() {$('#modal-succses-subs').modal('hide') }, 3000);
             form.trigger('reset');
-            $('#sub_email').attr('placeholder')
+            
           });
       }
     });

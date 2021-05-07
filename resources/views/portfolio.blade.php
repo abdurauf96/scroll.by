@@ -9,8 +9,11 @@
             <div class="top_line_developments">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="top_line_description inner_title" data-aos="fade-right" data-aos-delay="300">
-                            <h2 class="top_ttle">Портфолио</h2> </div>
+                        <div class="bread-crumb" data-aos="fade-right" data-aos-delay="400">
+                            <a href="/">  Scroll </a>
+                            <span> Портфолио </span> 
+                           
+                        </div>
                     </div>
                 </div>
             </div>

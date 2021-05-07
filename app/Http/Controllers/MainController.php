@@ -105,6 +105,9 @@ class MainController extends Controller
     public function blogDetail($slug)
     {
         $blog=Blog::whereSlug($slug)->first();
+        if(!$blog){
+            abort(404);
+        }
         $blogs=Blog::where('category', $blog->category)->where('id', '!=', $blog->id)->get();
 
         MetaTag::set('title', $blog->meta_title);
@@ -118,6 +121,9 @@ class MainController extends Controller
     {
         if($slug){
             $projectCategory=ProjectCategory::whereSlug($slug)->first();
+            if(!$projectCategory){
+                abort(404);
+            }
             $category_id=$projectCategory->id;
             $projects=Project::whereHas('categories', function($q) use($category_id){
                 $q->where('project_category_id', $category_id);

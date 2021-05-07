@@ -10,8 +10,11 @@
                 <div class="top_line_developments_wrapper">
                     <div class="top_line_developments">
                         <div class="col-md-12">
-                            <div class="top_line_description inner_title" data-aos="fade-right">
-                                <h2 class="top_ttle"><a href="/service" class="link">Услуги</a></h2> <span class="sub_mnu">Контекстная реклама</span> </div>
+                            <div class="bread-crumb" data-aos="fade-right" data-aos-delay="400">
+                                <a href="/">  Scroll </a>
+                                <a href="/services"> <span> Услуги  </span> </a>
+                               <span>Контекстная реклама</span> 
+                            </div>
                         </div>
                     </div>
                 </div>

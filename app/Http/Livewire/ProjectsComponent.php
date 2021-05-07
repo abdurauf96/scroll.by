@@ -11,10 +11,15 @@ class ProjectsComponent extends Component
     public $projects;
     public $categories;
     public $active;
-   
-    public function mount($active)
+    public $page;
+    public function mount($active, $page=null)
     {
-        $this->projects=Project::orderBy('order')->get();
+        if($page){
+            $this->projects=Project::orderBy('order')->where('status', 1)->get();
+        }else{
+            $this->projects=Project::orderBy('order')->get();
+        }
+        
         $this->categories=ProjectCategory::all();
         $this->active=$active;
     }

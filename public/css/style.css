@@ -7934,3 +7934,25 @@ input[type=checkbox]{
 .fa-telegram-plane{
 	background-color: #1767b9;
 }
+.bread-crumb {
+	display: flex;
+	align-items: center;
+}
+.bread-crumb  a{
+	color: black;
+	font-weight: bold;
+}
+.bread-crumb span{
+	color: black;
+}
+.bread-crumb span::before{
+	content:"";
+	display: inline-block;
+	width: 20px;
+	height: 1px;
+	
+	background: rgb(37, 36, 36);
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}

@@ -15,6 +15,6 @@
 			</div>
 		</div>
 	</div>
-	@livewire('projects-component', ['active'=>'all'])
+	@livewire('projects-component', ['active'=>'all', 'page'=>'mainpage'])
 	</div>
 </section>
