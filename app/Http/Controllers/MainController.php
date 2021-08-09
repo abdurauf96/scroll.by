@@ -129,10 +129,10 @@ class MainController extends Controller
     public function services()
     {
         $services=Service::all();
-        $page=ServicePage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+        //$page=ServicePage::first();
+        // MetaTag::set('title', $page->meta_title);
+        // MetaTag::set('description', $page->meta_description);
+        // MetaTag::set('keywords', $page->meta_keywords);
         return view('services', compact('services'));
     }
     

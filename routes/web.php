@@ -33,6 +33,11 @@ Route::get('/service/firmennyj-stil', [ServiceController::class, 'design'])->nam
 Route::get('/service/tehnicheskaya-podderzhka', [ServiceController::class, 'support'])->name('support');
 Route::get('/service/sozdanie-kontenta', [ServiceController::class, 'creatingContent'])->name('creatingContent');
 Route::get('/service/zashita-brenda-v-seti-internet', [ServiceController::class, 'protectBrand'])->name('protectBrand');
+
+Route::get('/service/razrabotka-sajtov/modx', [ServiceController::class, 'typeModX'])->name('typeModX');
+Route::get('/service/razrabotka-sajtov/bitriks', [ServiceController::class, 'typeBitriks'])->name('typeBitriks');
+Route::get('/service/razrabotka-sajtov/laravel', [ServiceController::class, 'typeLaravel'])->name('typeLaravel');
+
 Route::get('/service/1s-bitriks', [ServiceController::class, 'bitriks'])->name('bitriks');
 
 Route::post('/subscribe', [QueryController::class, 'subscribe']);

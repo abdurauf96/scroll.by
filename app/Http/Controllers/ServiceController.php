@@ -96,4 +96,26 @@ class ServiceController extends Controller
         MetaTag::set('keywords', $service->meta_keywords);
         return view('services.bitriks');
     }
+
+    public function typeModX()
+    {
+        // $url='/'.request()->path();
+        // $service=Service::where('url', $url)->first();
+        // MetaTag::set('title', $service->meta_title);
+        // MetaTag::set('description', $service->meta_description);
+        // MetaTag::set('keywords', $service->meta_keywords);
+        return view('services.modx');
+    }
+
+    public function typeLaravel()
+    {
+        $services=Service::all();
+        return view('services.laravel', compact('services'));
+    }
+
+    public function typeBitriks()
+    {
+        $services=Service::all();
+        return view('services.type_bitriks', compact('services'));
+    }
 }

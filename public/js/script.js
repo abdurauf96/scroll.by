@@ -41,7 +41,7 @@ $(document).ready(function () {
             success: function(response){
                 $('.modal').modal('hide');
                 $("#modal-succses").modal('show');
-                setTimeout(function() {$('#modal-succses').modal('hide') }, 3000);
+                setTimeout(function() {$('#modal-succses').modal('hide') }, 5000);
                 form.trigger('reset');
             }
         });
