@@ -1,7 +1,7 @@
 <div class="main-carousel-wrapper">
 	<div class="slick-main-carousel">
     @foreach ($slayders as $slayd)
-    <div class="item-owl">
+    	<div class="item-owl">
 			<div class="slider_img" style="background-image:url({{ Voyager::image($slayd->image) }})">
 				<!-- <img src="" data-lazy="img/header_bg.jpg" class="full-image animated" alt="" data-animation-in="zoomInImage"/> --></div>
 			<div class="header_descrition">
@@ -10,9 +10,19 @@
 					<p class="animated" data-animation-in="fadeInUp" data-delay-in="0.5"> </p> <a class="btn-circle white btn-style-transparent" href="#get-consultation" data-toggle="modal" data-animation-in="fadeInUp" data-delay-in="0.8">Получить консультацию<span></span></a> </div>
 			</div>
 		</div>
-    @endforeach
-		
+    @endforeach	
 	</div>
+	<div class="slider-controls main-slider-nav">
+		<button type="button" class="slick-next link"><span class="arrow"><span></span><span></span></span></button>
+		<div class="slide-m-dots"></div>
+		<button type="button" class="slick-prev link"><span class="arrow"><span></span><span></span></span></button>
+		<div class="main-slider-timer" style="margin-top: 65px;">
+		 <svg>
+			 <circle id="move" r="25" cx="30" cy="30"></circle>
+			 <circle r="25" cx="30" cy="30"></circle>
+		 </svg>
+	   </div>
+	 </div>
 	<div class="stack-technology">
 		<div class="container">
 			<div class="stack-technology-wrap">

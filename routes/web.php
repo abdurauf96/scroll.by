@@ -15,6 +15,10 @@ use App\Http\Controllers\QueryController;
 |
 */
 
+Route::get('/cache', function(){
+    \Artisan::call('config:cache');
+    return back();
+} );
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/agency', [MainController::class, 'agency'])->name('agency');
@@ -39,6 +43,7 @@ Route::get('/service/razrabotka-sajtov/bitriks', [ServiceController::class, 'typ
 Route::get('/service/razrabotka-sajtov/laravel', [ServiceController::class, 'typeLaravel'])->name('typeLaravel');
 
 Route::get('/service/1s-bitriks', [ServiceController::class, 'bitriks'])->name('bitriks');
+Route::get('/service/{slug}', [ServiceController::class, 'viewService']);
 
 Route::post('/subscribe', [QueryController::class, 'subscribe']);
 Route::post('/zayafka', [QueryController::class, 'zayafka']);

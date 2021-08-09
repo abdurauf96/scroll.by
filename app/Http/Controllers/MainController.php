@@ -11,6 +11,7 @@ use \App\Models\Blog;
 use \App\Models\Project;
 use \App\Models\ProjectCategory;
 use \App\Models\Client;
+use \App\Models\Vacancy;
 use \App\Models\HomePage;
 use \App\Models\ContactPage;
 use \App\Models\BlogPage;
@@ -46,57 +47,73 @@ class MainController extends Controller
         $link=\App\Models\Link::first();
 
         $page=ContactPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+        if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
+        
         return view('contact', compact('link'));
     }
 
     public function agency()
     {
         $page=AgencyPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+        if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
+       
         return view('agency');
     }
 
     public function reviews()
     {
         $page=ReviewPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+       if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
         return view('reviews');
     }
 
     public function vacancy()
     {
         $page=VacancyPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
-        return view('vacancy');
+        if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
+        $vacancies=Vacancy::all();
+        return view('vacancy', compact('vacancies'));
     }
 
     public function blog()
     {
         $page=BlogPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+        if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
         return view('blog');
     }
 
     public function blogDetail($slug)
     {
         $blog=Blog::whereSlug($slug)->first();
+        if(!$blog){
+            abort(404);
+        }
         $blogs=Blog::where('category', $blog->category)->where('id', '!=', $blog->id)->get();
 
-        $page=BlogDetailPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+        MetaTag::set('title', $blog->meta_title);
+        MetaTag::set('description', $blog->meta_description);
+        MetaTag::set('keywords', $blog->meta_keywords);
+        
         return view('blog_detail', compact('blog', 'blogs'));
     }
 
@@ -104,6 +121,9 @@ class MainController extends Controller
     {
         if($slug){
             $projectCategory=ProjectCategory::whereSlug($slug)->first();
+            if(!$projectCategory){
+                abort(404);
+            }
             $category_id=$projectCategory->id;
             $projects=Project::whereHas('categories', function($q) use($category_id){
                 $q->where('project_category_id', $category_id);
@@ -117,9 +137,11 @@ class MainController extends Controller
 
         $project_categories=ProjectCategory::all();
         $page=PortfolioPage::first();
-        MetaTag::set('title', $page->meta_title);
-        MetaTag::set('description', $page->meta_description);
-        MetaTag::set('keywords', $page->meta_keywords);
+        if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
         return view('portfolio', [
             'projects'=>$projects,
             'project_categories'=>$project_categories    
@@ -129,10 +151,19 @@ class MainController extends Controller
     public function services()
     {
         $services=Service::all();
+<<<<<<< HEAD
         //$page=ServicePage::first();
         // MetaTag::set('title', $page->meta_title);
         // MetaTag::set('description', $page->meta_description);
         // MetaTag::set('keywords', $page->meta_keywords);
+=======
+        $page=ServicePage::first();
+        if($page){
+        	MetaTag::set('title', $page->meta_title);
+	        MetaTag::set('description', $page->meta_description);
+	        MetaTag::set('keywords', $page->meta_keywords);
+        }
+>>>>>>> 83038c117240c8a10558baed55041c1aa0ee6224
         return view('services', compact('services'));
     }
     

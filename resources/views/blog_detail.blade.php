@@ -9,8 +9,12 @@
             <div class="top_line_developments">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="top_line_description inner_title" data-aos="fade-right" data-aos-delay="400">
-                            <h2 class="top_ttle">Блог</h2> <span class="sub_mnu">{{ $blog->category=='deal'? 'акция' : 'блог' }}</span> </div>
+                        
+                        <div class="bread-crumb" data-aos="fade-right" data-aos-delay="400">
+								<a href="/">  Scroll </a>
+								<a href="/blog"> <span> {{ $blog->category=='deal'? 'акция' : 'блог' }} </span> </a>
+								<span>{{ $blog->title }} </span> 
+						</div>
                         <div class="icon-category icon-long">
                             <a class="learn-more" href="/blog">
                                 <div class="circle-red"> <span class="icon">
@@ -81,7 +85,7 @@
                                     <div class="block_tags"> <span>{{ $item->created_at->format('d.m.y') }}</span> <span>{{ $blog->category=='deal'? 'акция' : 'блог' }}</span> </div>
                                 </div>
                                 <div class="news_title">
-                                    <h3> {{ $blog->title }}</h3> </div>
+                                    <h3> {{ $item->title }}</h3> </div>
                             </a>
                         </div>
                     </div>

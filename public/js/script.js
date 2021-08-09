@@ -1,7 +1,9 @@
 //форма подписаться на новости
 $(document).ready(function () {
     $("#subs_form").submit(function (event) {
-      var email=$('#sub_email').val();
+      event.preventDefault();
+     
+      var email = new FormData(this);
       var form = $(this);
       if(email!=''){
         $.ajax({
@@ -10,18 +12,22 @@ $(document).ready(function () {
             },
             type: "POST",
             url: "/subscribe",
-            data: {email:email},
-          }).done(function (data) {
-            $('.modal').modal('hide');
+            data: email,
+            cache:false,
+            contentType: false,
+            processData: false,
+          }).done(function (response) {
+            location.reload();
             $("#modal-succses-subs").modal('show');
             setTimeout(function() {$('#modal-succses-subs').modal('hide') }, 3000);
             form.trigger('reset');
+            
           });
       }
     });
   });
 
-
+  
   //форма оставить заявку
   $(document).ready(function() {
     $('form[id*="zayafka_form"]').submit(function( event ) {
@@ -39,6 +45,7 @@ $(document).ready(function () {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses").modal('show');
                 setTimeout(function() {$('#modal-succses').modal('hide') }, 5000);
@@ -65,10 +72,12 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses-review").modal('show');
                 setTimeout(function() {$('#modal-succses-review').modal('hide') }, 3000);
                 form.trigger('reset');
+                
             }
         });
     });
@@ -91,6 +100,7 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses-question").modal('show');
                 setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
@@ -117,6 +127,7 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response){
+                location.reload();
                 $('.modal').modal('hide');
                 $("#modal-succses-question").modal('show');
                 setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
@@ -243,32 +254,28 @@ $(function(){
 
 // 
 
+// $(document).ready(function() {
+//     $('form[id="question"]').submit(function( event ) {
+//         event.preventDefault();
+//         var array = $(this).serializeArray(),
+//             form = $(this);
 
+//         $.ajax({
+//             type: "POST",
+//             url: "/app/mail",
+//             data: array,
+//             dataType: 'html',
+//             success: function(response){
+//                 $('.modal').modal('hide');
+//                 $("#modal-succses-question").modal('show');
+//                 setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
+//                 form.trigger('reset');
+//             }
+//         });
+//         return false;
+//     });
 
-
-
-$(document).ready(function() {
-    $('form[id="question"]').submit(function( event ) {
-        event.preventDefault();
-        var array = $(this).serializeArray(),
-            form = $(this);
-
-        $.ajax({
-            type: "POST",
-            url: "/app/mail",
-            data: array,
-            dataType: 'html',
-            success: function(response){
-                $('.modal').modal('hide');
-                $("#modal-succses-question").modal('show');
-                setTimeout(function() {$('#modal-succses-question').modal('hide') }, 3000);
-                form.trigger('reset');
-            }
-        });
-        return false;
-    });
-
-});
+// });
 
 function searhes(number,naim){
     var result = '';
